@@ -1,0 +1,4 @@
+AvroToCSV.class
+com/avro/example/User.class
+com/avro/example/User$Builder.class
+com/avro/example/User$1.class
