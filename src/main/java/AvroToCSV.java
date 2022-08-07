@@ -58,7 +58,7 @@ public class AvroToCSV {
   }
 
   public static void jsonToCSV(JSONArray json) {
-    File file = new File("avroToJson.csv");
+    File file = new File("twitter.csv");
     String csv;
     try {
       csv = CDL.toString(json);

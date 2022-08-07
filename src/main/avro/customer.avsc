@@ -1,0 +1,13 @@
+{"namespace": "com.datamelt.kafka",
+ "type": "record",
+ "name": "Customer",
+ "version": "1",
+ "fields": [
+	{"name": "first_name", "type": "string"},
+	{"name": "last_name", "type": "string"},
+	{"name": "age", "type": "int"},
+	{"name": "height", "type": "float"},
+	{"name": "weight", "type": "float"},
+	{"name": "automated_email", "type": "boolean"}
+	]
+}
