@@ -22,7 +22,6 @@ public class CustomerCsvToAvro
     writer.append(csvData_1);
     writer.append(csvData_2);
     writer.append(csvData_3);
-
     writer.closeWriter();
   }
 }

@@ -16,6 +16,47 @@ import org.apache.commons.io.FileUtils;
 
 public class AvroToCSV {
 
+//  public static void readAvro(File file) {
+//    // Read Avro ,parse Schema to get field names and parse it to json
+//    try {
+//      /**
+//       * DatumReader:converts in-memory serialized items -> objects/class
+//       * DataFileReader: read file's schema and data
+//       * */
+//      //DatumWriter - converts Java objects into an in-memory serialized format
+//      GenericDatumReader<GenericData.Record> datum = new GenericDatumReader<>();
+//      //DatumReader - deserialize the data file
+//      DataFileReader<GenericData.Record> reader = new DataFileReader<>(file, datum);
+//
+//      GenericData.Record record = new GenericData.Record(reader.getSchema());
+//      Schema schema = reader.getSchema();
+//      List<String> fieldValues = new ArrayList<>();
+//      JSONArray jsonArray = new JSONArray();
+//      for (Field field : schema.getFields()) {
+//        fieldValues.add(field.name());
+//      }
+//
+//      //iteration
+//      while (reader.hasNext()) {
+//        reader.next(record);
+//        Map<String, String> jsonFileds = new HashMap<>();
+//        for (String item : fieldValues) {
+//          //System.out.println(item);
+//
+//          jsonFileds.put(item, record.get(item).toString());
+//        }
+//        jsonArray.put(jsonFileds);
+//      }
+//      //System.out.println(jsonArray.toString());
+//      reader.close();
+//      jsonToCSV(jsonArray);
+//    } catch (IOException e) {
+//      // TODO Auto-generated catch block
+//      e.printStackTrace();
+//    }
+//
+//  }
+
   public static void readAvro(File file) {
     // Read Avro ,parse Schema to get field names and parse it to json
     try {
@@ -39,6 +80,8 @@ public class AvroToCSV {
       //iteration
       while (reader.hasNext()) {
         reader.next(record);
+        String jsonString = record.toString();
+        System.out.println(jsonString);
         Map<String, String> jsonFileds = new HashMap<>();
         for (String item : fieldValues) {
           //System.out.println(item);
@@ -59,10 +102,10 @@ public class AvroToCSV {
 
   public static void jsonToCSV(JSONArray json) {
     File file = new File("twitter.csv");
-    String csv;
+    String csvString;
     try {
-      csv = CDL.toString(json);
-      FileUtils.writeStringToFile(file, csv);
+      csvString = CDL.toString(json);
+      FileUtils.writeStringToFile(file, csvString);
     } catch (JSONException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();

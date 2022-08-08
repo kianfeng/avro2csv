@@ -49,6 +49,17 @@
       <artifactId>joda-time</artifactId>
       <version>2.10.14</version>
     </dependency>
+<!--    JackSon csv -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-csv</artifactId>
+      <version>2.13.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.0</version>
+    </dependency>
 
   </dependencies>
 
