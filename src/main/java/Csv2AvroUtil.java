@@ -179,7 +179,7 @@
 //    }
 //  }
 //
-//  public static void main(String[] args){
+//  public static void MyCommandLine(String[] args){
 //    if (args.length != 5) {
 //      return;
 //    }

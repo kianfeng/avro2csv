@@ -15,7 +15,7 @@ public class csvToAvro {
     String folder = "./";
     String outputFile = folder + "/discount_test.avro";
 
-    File inputFile = new File("src/main/resources/twitter2.csv");
+    File inputFile = new File("src/MyCommandLine/resources/twitter2.csv");
     FileReader fileReader = new FileReader(inputFile);
     BufferedReader bufferedReader = new BufferedReader(fileReader);
 

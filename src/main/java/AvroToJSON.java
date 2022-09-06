@@ -1,6 +1,7 @@
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema.Builder;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import org.apache.avro.file.DataFileReader;
@@ -18,8 +19,10 @@ import utils.JSONFlattener;
 public class AvroToJSON {
 
   public static void main(String[] args) throws Exception {
-    AvroToJSON AvroToJSON = new AvroToJSON();
-    AvroToJSON.convertToCSV("twitter.avro","src/main/resources/test/");
+    DateTimeFormatter timeStampPattern = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+    System.out.println(timeStampPattern.format(java.time.LocalDateTime.now()));
+//    AvroToJSON AvroToJSON = new AvroToJSON();
+//    AvroToJSON.convertToCSV("twitter.avro","src/MyCommandLine/resources/test/");
   }
 
   public void convertToCSV(String inputAvroFileName, String csvOutputPath) throws Exception{
@@ -38,7 +41,7 @@ public class AvroToJSON {
               });
         }
       }else {
-        processAvro("src/main/resources/test/twitter.avro",csvOutputPath);
+        processAvro("src/MyCommandLine/resources/test/twitter.avro",csvOutputPath);
       }
     }catch (IOException ex){
       throw  new Exception("Conversion failed." + ex.getMessage());

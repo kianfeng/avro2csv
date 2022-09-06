@@ -11,7 +11,7 @@
 //
 //public class AvroSerializerTest {
 //
-//  public static void main(String[] args) throws IOException {
+//  public static void MyCommandLine(String[] args) throws IOException {
 //
 //    MyUser myUser1 = new MyUser();
 //    myUser1.setName("Tom");
@@ -27,7 +27,7 @@
 //
 ////    DatumWriter<MyUser> userDatumWriter = new SpecificDatumWriter<>(MyUser.class);
 ////    DataFileWriter<MyUser> dataFileWriter = new DataFileWriter<MyUser>(userDatumWriter);
-////    dataFileWriter.create(myUser1.getSchema(), new File("./src/main/resources/users.avro"));
+////    dataFileWriter.create(myUser1.getSchema(), new File("./src/MyCommandLine/resources/users.avro"));
 ////    dataFileWriter.append(myUser1);
 ////    dataFileWriter.append(myUser2);
 ////    dataFileWriter.append(myUser3);
@@ -36,7 +36,7 @@
 //    Schema schema = new org.apache.avro.Schema.Parser().parse(file);
 //    DatumWriter<GenericRecord> userDatumWriter = new SpecificDatumWriter<>(schema);
 //    DataFileWriter<GenericRecord> dataFileWriter = new DataFileWriter<>(userDatumWriter);
-//    dataFileWriter.create(schema, new File("./src/main/resources/users2.avro"));
+//    dataFileWriter.create(schema, new File("./src/MyCommandLine/resources/users2.avro"));
 //    dataFileWriter.append(myUser1);
 //    dataFileWriter.append(myUser2);
 //    dataFileWriter.append(myUser3);

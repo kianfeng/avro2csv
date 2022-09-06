@@ -8,7 +8,7 @@ public class CustomerCsvToAvro
     String baseFolder = "./";
 
     String outputFilename = "customer_test_1.avro";
-    String schemaFilename = "src/main/avro/customer.avsc";
+    String schemaFilename = "src/MyCommandLine/avro/customer.avsc";
 
     File schemaFile = new File( baseFolder + schemaFilename);
 
